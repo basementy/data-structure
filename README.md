@@ -1,2 +1,2 @@
-# data_structure
+# Data Structure
 This is a repository for my Data Structure classes
