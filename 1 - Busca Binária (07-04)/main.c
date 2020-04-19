@@ -13,7 +13,7 @@ int getInput() {
 }
 
 int main() {
-  int arr[] = { 3, 11, 20, 24, 30, 41, 41, 44, 50, 51, 60, 69, 70, 77, 80, 83, 83, 89, 9 };
+  int arr[] = { 3, 11, 20, 24, 30, 41, 41, 44, 50, 51, 60, 69, 70, 77, 80, 83, 83, 89, 96 };
   int length = sizeof(arr) / sizeof(arr[0]);
   int number = getInput();
   int result = search(arr, 0, length - 1, number);
