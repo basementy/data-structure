@@ -9,7 +9,6 @@ void clear() {
 void mainMenu(char text[], char pattern[]) {
   int option;
 
-
   do {
     clear();
     printf("Pattern: %s\n\n", pattern);
@@ -51,12 +50,12 @@ void startConfig() {
     clear();
     startConfig();
   } else {
-    while((fgets(text, sizeof(text), arq)) != NULL )
+    fgets(text, sizeof(text), arq);
     fclose(arq);
   }
 
   printf("- Insert the pattern: ");
-  fgets(pattern, 50, stdin);
+  fgets(pattern, 100, stdin);
   pattern[strcspn(pattern, "\n")] = 0;
 
   mainMenu(text, pattern);
