@@ -6,7 +6,7 @@
 #include "src/utils.c"
 
 int main() {
-	int studentId;
+  int studentId;
   list studentList;
   student	currentList;
   FILE *studentsFile;
