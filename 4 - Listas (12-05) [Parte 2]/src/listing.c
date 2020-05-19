@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "types.c"
+
 void createList(list *studentList) {
 	*studentList = NULL;
 }
@@ -32,15 +34,18 @@ student *searchList(list studentList, int studentId) {
 }
 
 void searchStudent(list studentList) {
-  int studentId;
+  int studentId = 1;
   student *studentPointer;
 
-  while (studentId != -1) {
+  do {
     system("@cls||clear");
     printf("\nEnter student ID (0 to exit): ");
 		scanf("%d", &studentId);
 
-		studentPointer = searchList(studentList, studentId);
+    if (studentId == 0)
+      return;
+
+    studentPointer = searchList(studentList, studentId);
 
 		if (!studentPointer)
 			printf("\nStudent ID #%d not found!\n", studentId);
@@ -53,5 +58,5 @@ void searchStudent(list studentList) {
 
     getchar();
     getchar();
-  }
+  } while (studentId != 0);
 }

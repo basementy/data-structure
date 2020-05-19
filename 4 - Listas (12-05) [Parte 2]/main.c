@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "src/types.c"
 #include "src/utils.c"
 
 int main() {
