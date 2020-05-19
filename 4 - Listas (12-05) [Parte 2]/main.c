@@ -12,9 +12,9 @@ int main() {
   FILE *studentsFile;
 
   studentsFile = searchFile();
-	createList(&studentList);
+  createList(&studentList);
 
-	while (studentsFile) {
+  while (studentsFile) {
     fscanf(studentsFile, "%d %s %f",
       &currentList.id,
       currentList.name,
