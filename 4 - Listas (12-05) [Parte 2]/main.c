@@ -24,8 +24,8 @@ int main() {
     if (feof(studentsFile))
       break;
 
-		insertList(&studentList, currentList);
-	}
+    insertList(&studentList, currentList);
+  }
 
   fclose(studentsFile);
   mainMenu(studentList);
