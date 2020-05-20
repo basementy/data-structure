@@ -10,4 +10,7 @@ typedef struct student {
 typedef struct node {
 	student	student;
 	struct node *next;
-} node, *list;
+	struct node *prev;
+} node;
+
+struct node *head;

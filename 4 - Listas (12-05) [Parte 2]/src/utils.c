@@ -4,20 +4,32 @@
 
 #include "listing.c"
 
-void mainMenu(list studentList) {
+void mainMenu() {
   int menuOption;
 
   do {
     system("@cls||clear");
-    printf("\nChoose a option: \n\n");
+    printf("Choose a option: \n\n");
     printf("1 - Search Student\n");
+    printf("2 - Print List (Ascendant)\n");
+    printf("3 - Print List (Descendant)\n");
+    printf("4 - Delete Student\n");
     printf("0 - Quit\n\n");
     printf("Option: ");
     scanf("%d%*c", &menuOption);
 
     switch(menuOption) {
       case 1:
-        searchStudent(studentList);
+        searchStudent();
+      break;
+      case 2:
+        printListAscendant();
+      break;
+      case 3:
+        printListDescendant();
+      break;
+      case 4:
+        searchAndDelete();
       break;
     }
 	} while(menuOption != 0);
@@ -26,7 +38,8 @@ void mainMenu(list studentList) {
 FILE *searchFile() {
   char filePath[50];
 
-  printf("\nInsert the file path: ");
+  system("@cls||clear");
+  printf("Insert the file path: ");
   fgets(filePath, 50, stdin);
   filePath[strcspn(filePath, "\n")] = 0;
 

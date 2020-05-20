@@ -6,26 +6,24 @@
 
 int main() {
   int studentId;
-  list studentList;
-  student	currentList;
-  FILE *studentsFile;
+  student	currentStudent;
+  FILE *listFile;
+  head = NULL;
+  listFile = searchFile();
 
-  studentsFile = searchFile();
-  createList(&studentList);
-
-  while (studentsFile) {
-    fscanf(studentsFile, "%d %s %f",
-      &currentList.id,
-      currentList.name,
-      &currentList.grade
+  while (listFile) {
+    fscanf(listFile, "%d %s %f",
+      &currentStudent.id,
+      currentStudent.name,
+      &currentStudent.grade
     );
 
-    if (feof(studentsFile))
+    if (feof(listFile))
       break;
 
-    insertList(&studentList, currentList);
+    insertNode(currentStudent);
   }
 
-  fclose(studentsFile);
-  mainMenu(studentList);
+  fclose(listFile);
+  mainMenu();
 }
